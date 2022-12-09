@@ -21,10 +21,13 @@
               [app.common.iso.api]
               [app.contents.backend.api]
               [app.home.backend.api]
+              [app.rental-vehicles.backend.api]
               [app.settings.backend.api]
               [app.storage.backend.api]
               [app.user.backend.api]
               [app.views.backend.api]
+              [app.website-content.backend.api]
+              [app.website-pages.backend.api]
 
               ; sample
               [app.sample.backend.api]

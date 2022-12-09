@@ -34,3 +34,6 @@ environment/media/storage/*
 
 # app.website-config
 environment/project/website-config.edn
+
+# app.website-content
+environment/project/website-content.edn

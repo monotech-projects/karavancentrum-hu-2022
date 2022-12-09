@@ -12,10 +12,13 @@
               [app.components.frontend.api]
               [app.contents.frontend.api]
               [app.home.frontend.api]
+              [app.rental-vehicles.frontend.api]
               [app.settings.frontend.api]
               [app.storage.frontend.api]
               [app.user.frontend.api]
-              [app.views.frontend.api]))
+              [app.views.frontend.api]
+              [app.website-content.frontend.api]
+              [app.website-pages.frontend.api]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
