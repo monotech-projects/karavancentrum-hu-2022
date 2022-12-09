@@ -29,7 +29,7 @@
               ; sample
               [app.sample.backend.api]
               [project.sample.backend.api]
-              [site.sample.backend.api])
+              [site.karavancentrum-hu.backend.api])
 
     (:gen-class))
 

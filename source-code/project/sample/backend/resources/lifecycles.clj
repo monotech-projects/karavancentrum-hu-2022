@@ -7,4 +7,4 @@
 
 (x.core/reg-lifecycles! ::lifecycles
   {:on-server-init [:x.core/add-resources! {::public {:path "/" :root "/public"}
-                                            ::sample {:path "/" :root "/sample"}}]})
+                                            ::sample {:path "/" :root "/karavancentrum-hu"}}]})

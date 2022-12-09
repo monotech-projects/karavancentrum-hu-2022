@@ -11,7 +11,7 @@
               [x.boot-loader.api :as x.boot-loader]
 
               ; sample
-              [site.sample.frontend.api :as sample]))
+              [site.karavancentrum-hu.frontend.api :as karavancentrum-hu]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -19,7 +19,7 @@
 (defn- site-structure
   ; @param (symbol) ui-structure
   [ui-structure]
-  [:<> [sample/wrapper ui-structure]
+  [:<> [karavancentrum-hu/wrapper ui-structure]
        [project-developer/magic-button]])
 
 ;; ----------------------------------------------------------------------------

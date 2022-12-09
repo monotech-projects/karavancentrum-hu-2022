@@ -1,0 +1,755 @@
+
+/******************************************************************************/
+/***** Website *****/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+#kc {
+  background-color: #f4f7f6;
+}
+
+/***** Website *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Utils *****/
+
+.kc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.kc-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.kc-link:hover,
+.kc-link:focus {
+  text-decoration: none;
+}
+
+/***** Utils *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Navbar *****/
+
+#mt-navbar {
+  height: 75px;
+  padding: 0 24px;
+  transition: background-color .2s;
+}
+
+#mt-navbar[data-scrolled="false"] {
+  background-color: hsl(0deg 0% 100% / 0%);
+}
+
+#mt-navbar[data-scrolled="true"] {
+  background-color: hsl(0deg 0% 100% / 80%);
+}
+
+#mt-navbar--menu-items {
+  gap: 50px;
+}
+
+.mt-navbar--menu-item {
+  color: #333;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+#mt-navbar .mt-effect--underline::before {
+  bottom: 0px;
+  --underline-color: #333;
+}
+
+/***** Navbar *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Sidebar *****/
+
+#mt-sidebar--content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#kc-sidebar--menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.kc-sidebar--menu-item {
+  color: #333;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+#mt-sidebar .mt-effect--underline::before {
+  bottom: 0px;
+  --underline-color: #333;
+}
+
+/***** Sidebar *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Section *****/
+
+.kc-section-title {
+  align-items: center;
+  display: flex;
+  font-family: 'Poppins';
+  font-size: 30px;
+  font-weight: 200;
+  letter-spacing: 3px;
+  line-height: 30px;
+  padding: 120px 0 60px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.kc-content-button {
+  border-radius: 10px;
+  background-color: #e6efec;
+  cursor: pointer;
+  line-height: 20px;
+  padding: 10px 40px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  user-select: none;
+}
+
+.kc-content-button:hover {
+  text-decoration: none;
+  background-color: #c5ede1;
+}
+
+/***** Section *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Hero *****/
+
+#kc-hero {
+  height: 95vh;
+  background-position: 55% 60%;
+  background-image: url(/site/images/hero-1920.jpg);
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  justify-content: center;
+}
+
+#kc-hero::after {
+  background-color: #9dc3fb;
+  bottom: 0;
+  content: '';
+  height: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+#kc-navbar--company-name-and-slogan {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: opacity .25s .25s;
+}
+
+#kc-navbar--company-name-and-slogan[data-hidden="true"] {
+  opacity: 0;
+}
+
+#kc-navbar--company-name {
+  color: #007cff;
+  font-family: 'Poppins';
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 3.5px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+#kc-navbar--company-slogan {
+  color: #555;
+  font-family: 'Dancing script';
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  line-height: 26px;
+}
+
+#kc-hero--company-name-and-slogan {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 20%;
+  position: absolute;
+  top: 15vh;
+  transition: opacity .25s .25s;
+}
+
+[data-viewport-profile="xxs"] #kc-hero--company-name-and-slogan,
+[data-viewport-profile="xs"]  #kc-hero--company-name-and-slogan,
+[data-viewport-profile="s"]   #kc-hero--company-name-and-slogan {
+  left: 10%;
+}
+
+[data-viewport-profile="xxs"] #kc-hero--company-name,
+[data-viewport-profile="xs"]  #kc-hero--company-name,
+[data-viewport-profile="s"]   #kc-hero--company-name {
+  font-size: 25px;
+  line-height: 35px;
+}
+
+[data-viewport-profile="xxs"] #kc-hero--company-slogan,
+[data-viewport-profile="xs"]  #kc-hero--company-slogan,
+[data-viewport-profile="s"]   #kc-hero--company-slogan {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+#kc-hero--company-name-and-slogan[data-hidden="true"] {
+  opacity: 0;
+}
+
+#kc-hero--company-name {
+  color: #007cff;
+  font-family: 'Poppins';
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: 3.5px;
+  line-height: 45px;
+  text-transform: uppercase;
+}
+
+#kc-hero--company-slogan {
+  color: #555;
+  font-family: 'Dancing script';
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  line-height: 40px;
+}
+
+/***** Hero *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Renting *****/
+
+#kc-renting {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  padding-bottom: 120px;
+}
+
+/*** Filters ***/
+
+#kc-filters--container {
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 50px;
+  max-width: 90vw;
+  text-align: center;
+}
+
+#kc-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 60px;
+}
+
+.kc-filters--icon-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.kc-filters--icon-input:disabled ~ .kc-filters--icon-img img {
+
+}
+
+.kc-filters--icon-input:checked ~ .kc-filters--icon-img img{
+  opacity: 1;
+}
+
+.kc-filters--icon label {
+  cursor: pointer;
+}
+
+.kc-filters--icon img {
+  opacity: 0.4;
+  height: 50px;
+  width: 50px;
+}
+
+.kc-filters--icon[data-disabled="false"]:hover,
+.kc-filters--icon[data-disabled="false"]:focus-within {
+  opacity: 0.7;
+}
+
+/*** Filters ***/
+
+/*** Vehicles ***/
+
+#kc-vehicles--container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  grid-gap: 45px;
+  max-width: 1440px;
+  padding-bottom: 45px;
+  padding-top: 45px;
+  width: 100%;
+}
+
+.kc-vehicle-card-wrapper {
+  max-width: 620px;
+  width: 100%;
+}
+
+.kc-vehicle-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media only screen and (max-width: 620px) {
+.kc-vehicle-card {
+  border-radius: 0;
+}}
+
+.kc-vehicle-card:hover .kc-vehicle-card--thumbnail {
+  opacity: .8;
+}
+
+.kc-vehicle-card--thumbnail {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 360px;
+  transition: opacity .15s;
+  width: 100%;
+}
+
+.kc-vehicle-card--header {
+  background-color: hsl(0deg 0% 100% / 85%);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 5px
+}
+
+.kc-vehicle-card--name {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 0 0 0;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+.kc-vehicle-card--details {
+  display: flex;
+  grid-column-gap: 25px;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+
+
+.kc-vehicle-card--number-of-bunks,
+.kc-vehicle-card--number-of-seats {
+  align-items: flex-end;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 15px;
+  padding-left: 30px;
+}
+
+.kc-vehicle-card--number-of-bunks {
+  background-image: url('/site/icons/card-icons/bed-light.png');
+}
+
+.kc-vehicle-card--number-of-seats {
+  background-image: url('/site/icons/card-icons/seat-light.png');
+}
+
+/*** Vehicles ***/
+/***** Renting *****/
+/******************************************************************************/
+
+
+/******************************************************************************/
+/***** Brands *****/
+
+#kc-brands {
+  align-items: center;
+  background-color: #cad6d2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 120px;
+}
+
+#kc-brands--brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 45px;
+  justify-content: center;
+  max-width: 1440px;
+  width: 100%;
+}
+
+.kc-brand {
+  align-items: left;
+  background-color: #ffffff9c;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  max-width: 420px;
+  min-height: 480px;
+}
+
+.kc-brand--title {
+  border-bottom: 1px solid #ddd;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 25px;
+  padding: 30px;
+}
+
+.kc-brand--label {
+  font-weight: 500;
+}
+
+.kc-brand--link-box {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  grid-column-gap: 24px;
+  justify-content: flex-end;
+  padding: 60px 30px 30px 30px;
+}
+
+.kc-brand--link {
+  color: #888;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 450px) {
+.kc-brand--link {
+  font-size: 13px;
+}}
+
+.kc-brand--description {
+  color: #454545;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 30px;
+}
+
+.kc-brand--goto {
+  align-items: center;
+  display: flex;
+  color: #008579 !important;
+  font-size: 15px;
+  font-weight: 500;
+  grid-gap: 15px;
+  margin-top: 15px;
+  width: 120px;
+}
+
+.kc-brand--goto span {
+}
+
+.kc-brand--goto i {
+  transition: transform .15s;
+}
+
+.kc-brand--goto:hover i {
+  transform: rotateZ(360deg);
+}
+
+.kc-brand--goto:hover {
+  text-decoration: none;
+  opacity: .8;
+}
+
+@media only screen and (max-width: 420px) {
+.kc-brand {
+  border-radius: 0;
+}}
+
+/***** Brands *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** About us *****/
+
+#kc-about-us {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -min-height: 100vh;
+  padding-bottom: 120px;
+}
+
+#kc-about-us--section {
+  max-width: 1024px;
+  padding: 0 30px 60px 30px;
+}
+
+/***** About us *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Contacts *****/
+
+#kc-contacts {
+  border-top: 1px solid #ccc;
+  background-color: #bddae5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+#kc-contacts--background {
+  background-image: url(/site/images/footer-1920.jpg);
+  background-position: bottom;
+  background-size: cover;
+  height: 800px;
+}
+
+#kc-contacts--background::after {
+  background-color: #9dc3fb;
+  bottom: 0;
+  content: '';
+  height: 5px;
+  position: absolute;
+  width: 100%;
+}
+
+#mt-contacts {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+}
+
+.mt-contacts--address-group,
+.mt-contacts--contact-group {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  padding-bottom: 30px;
+}
+
+#mt-contacts--address-data-information,
+#mt-contacts--contacts-data-information {
+  margin-bottom: 30px;
+  min-width: 500px;
+}
+
+.mt-contacts--address-data-information,
+.mt-contacts--contacts-data-information,
+.mt-contacts--contact-group-label,
+.mt-contacts--address-group-label {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  letter-spacing: 2px;
+}
+
+.mt-contacts--email-address,
+.mt-contacts--phone-number,
+.mt-contacts--company-address {
+  color: #007cff !important;
+  font-size: 21px;
+  line-height: 35px;
+  letter-spacing: 2px;
+  width: fit-content;
+}
+
+@media only screen and (max-width: 800px) {
+.mt-contacts--email-address,
+.mt-contacts--phone-number,
+.mt-contacts--company-address {
+  font-size: 15px;
+}}
+
+#kc-social-media-links {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 24px;
+  padding-top: 60px;
+}
+
+.kc-social-media-link {
+  display: flex;
+  text-decoration: none;
+}
+
+.kc-social-media-link:hover {
+  opacity: .5;
+  text-decoration: none;
+}
+
+.kc-social-media-link i {
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  width: 32px;
+}
+
+.kc-social-media-link span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 24px;
+  padding-left: 12px;
+}
+
+/***** Contacts *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Impressum *****/
+
+#mt-impressum {
+  background-color: #2d2925;
+  color: #a5a5a5;
+  display: flex;
+  font-size: var( --font-size-xs );
+  font-weight: 500;
+  justify-content: center;
+  padding: 25px 0 50px 0;
+}
+
+#mt-impressum--company-data {
+  display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 10px;
+  justify-content: center;
+  max-width: 720px;
+}
+
+#mt-impressum--company-name {
+  display: flex;
+  gap: 12px;
+}
+
+/***** Impressum *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Vehicle page, Rent-informations *****/
+
+#kc-rent-informations--wrapper,
+#kc-vehicle-page--wrapper {
+  align-items: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#kc-rent-informations--content,
+#kc-vehicle-page--content {
+  /* ..., hogy a downloading... felirat középen jelenjen meg ... */
+  display: flex;
+  justify-content: center;
+
+  font-size: var( --font-size-s );
+
+  padding: 24px;
+  border-radius: 10px;
+  background-color: white;
+  width: 1024px;
+}
+
+@media only screen and (max-width: 1024px) {
+#kc-rent-informations--content,
+#kc-vehicle-page--content {
+  border-radius: 0;
+  width: 100%;
+}}
+
+#kc-vehicle-page--slider {
+  border-radius: 10px;
+  margin-top: 150px;
+  overflow: hidden;
+  width: 1024px;
+}
+
+@media only screen and (max-width: 1024px) {
+#kc-vehicle-page--slider {
+  border-radius: 0;
+  width: 100%;
+}}
+
+#kc-vehicle-page--slider li {
+    align-self: center;
+}
+
+/***** Vehicle page, Rent-informations *****/
+/******************************************************************************/
