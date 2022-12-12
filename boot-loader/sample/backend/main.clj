@@ -26,7 +26,6 @@
               [app.website-pages.backend.api]
               ; monotech-projects/karavancentrum-hu-2022
               [app.rental-vehicles.backend.api]
-              [app.sample.backend.api]
               [project.sample.backend.api]
               [site.karavancentrum-hu.backend.api]
               [site.rental-vehicles.backend.api]

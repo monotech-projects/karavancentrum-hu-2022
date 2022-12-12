@@ -4,6 +4,7 @@
               [app.components.frontend.api                 :as components]
               [app.contents.frontend.api                   :as contents]
               [app.karavancentrum-hu.frontend.editor.boxes :as editor.boxes]
+              [app.sample.frontend.api                     :as website-content]
               [elements.api                                :as elements]
               [engines.file-editor.api                     :as file-editor]
               [layouts.surface-a.api                       :as surface-a]
@@ -14,14 +15,14 @@
 
 (defn- basic-data
   []
-  [:<> [editor.boxes/website-logo-box]
-       [editor.boxes/website-data-box]])
+  [:<> [website-content/website-logo-box]
+       [website-content/website-data-box]])
 
 (defn- menus
   []
-  [:<> [editor.boxes/header-menu-box]
-       [editor.boxes/sidebar-menu-box]
-       [editor.boxes/footer-menu-box]])
+  [:<> [website-content/header-menu-box]
+       [website-content/sidebar-menu-box]
+       [website-content/footer-menu-box]])
 
 (defn- about-us
   []
@@ -59,7 +60,7 @@
                              {:label       :website-content
                               :crumbs      [{:label :app-home :route "/@app-home"}
                                             {:label :website-content}]
-                              :menu-items  [{:label :basic-data :change-keys [:company-name :company-slogan :company-logo]}
+                              :menu-items  [{:label :basic-data :change-keys [:website-name :website-slogan :website-logo]}
                                             {:label :menus      :change-keys [:header-menu :footer-menu]}
                                             {:label :selling    :change-keys [:brands]}
                                             {:label :about-us   :change-keys [:about-us-section :about-us-page]}]}])

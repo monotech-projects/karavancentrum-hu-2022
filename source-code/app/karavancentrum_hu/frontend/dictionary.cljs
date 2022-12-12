@@ -22,21 +22,4 @@
             :hu "Kapcsolati adatok információ"}
            :rent-informations
            {:en "Rent informations"
-            :hu "Bérléssel kapcsolatos információk"}
-           :website-content
-           {:en "Website content"
-            :hu "Webhely tartalma"}
-
-           ; TEMP
-           :header-menu
-           {:en "Header menu"
-            :hu "Fejléc menü"}
-           :footer-menu
-           {:en "Footer menu"
-            :hu "Lábléc menü"}
-           :sidebar-menu
-           {:en "Sidebar menu"
-            :hu "Oldalsáv menü"}
-           :menus
-           {:en "Menus"
-            :hu "Menük"}})
+            :hu "Bérléssel kapcsolatos információk"}})

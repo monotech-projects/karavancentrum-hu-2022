@@ -176,7 +176,7 @@
   width: 100%;
 }
 
-#kc-navbar--company-name-and-slogan {
+#kc-navbar--website-name-and-slogan {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -184,11 +184,11 @@
   transition: opacity .25s .25s;
 }
 
-#kc-navbar--company-name-and-slogan[data-hidden="true"] {
+#kc-navbar--website-name-and-slogan[data-hidden="true"] {
   opacity: 0;
 }
 
-#kc-navbar--company-name {
+#kc-navbar--website-name {
   color: #007cff;
   font-family: 'Poppins';
   font-size: 20px;
@@ -198,7 +198,7 @@
   text-transform: uppercase;
 }
 
-#kc-navbar--company-slogan {
+#kc-navbar--website-slogan {
   color: #555;
   font-family: 'Dancing script';
   font-size: 18px;
@@ -207,7 +207,7 @@
   line-height: 26px;
 }
 
-#kc-hero--company-name-and-slogan {
+#kc-hero--website-name-and-slogan {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -218,31 +218,31 @@
   transition: opacity .25s .25s;
 }
 
-[data-viewport-profile="xxs"] #kc-hero--company-name-and-slogan,
-[data-viewport-profile="xs"]  #kc-hero--company-name-and-slogan,
-[data-viewport-profile="s"]   #kc-hero--company-name-and-slogan {
+[data-viewport-profile="xxs"] #kc-hero--website-name-and-slogan,
+[data-viewport-profile="xs"]  #kc-hero--website-name-and-slogan,
+[data-viewport-profile="s"]   #kc-hero--website-name-and-slogan {
   left: 10%;
 }
 
-[data-viewport-profile="xxs"] #kc-hero--company-name,
-[data-viewport-profile="xs"]  #kc-hero--company-name,
-[data-viewport-profile="s"]   #kc-hero--company-name {
+[data-viewport-profile="xxs"] #kc-hero--website-name,
+[data-viewport-profile="xs"]  #kc-hero--website-name,
+[data-viewport-profile="s"]   #kc-hero--website-name {
   font-size: 25px;
   line-height: 35px;
 }
 
-[data-viewport-profile="xxs"] #kc-hero--company-slogan,
-[data-viewport-profile="xs"]  #kc-hero--company-slogan,
-[data-viewport-profile="s"]   #kc-hero--company-slogan {
+[data-viewport-profile="xxs"] #kc-hero--website-slogan,
+[data-viewport-profile="xs"]  #kc-hero--website-slogan,
+[data-viewport-profile="s"]   #kc-hero--website-slogan {
   font-size: 20px;
   line-height: 30px;
 }
 
-#kc-hero--company-name-and-slogan[data-hidden="true"] {
+#kc-hero--website-name-and-slogan[data-hidden="true"] {
   opacity: 0;
 }
 
-#kc-hero--company-name {
+#kc-hero--website-name {
   color: #007cff;
   font-family: 'Poppins';
   font-size: 35px;
@@ -252,7 +252,7 @@
   text-transform: uppercase;
 }
 
-#kc-hero--company-slogan {
+#kc-hero--website-slogan {
   color: #555;
   font-family: 'Dancing script';
   font-size: 30px;

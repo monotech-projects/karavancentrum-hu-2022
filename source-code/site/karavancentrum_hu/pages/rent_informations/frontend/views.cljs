@@ -7,7 +7,7 @@
 ;; ----------------------------------------------------------------------------
 
 (defn view-structure []
-  (if-let [rent-informations @(r/subscribe [:contents.handler/get-parsed-content [:website-content :handler/downloaded-content :rent-informations]])]
+  (if-let [rent-informations @(r/subscribe [:contents.handler/get-parsed-content [:website-content :handler/transfered-content :rent-informations]])]
           [:<> [:main {:id :kc-rent-informations--wrapper}
                       [:h1.kc-section-title "Bérlési feltételek"]
                       [:div#kc-rent-informations--content rent-informations]
