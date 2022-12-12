@@ -29,9 +29,9 @@
 
 (defn sidebar-menu
   []
-  (let [header-menu @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :header-menu]])]
+  (let [sidebar-menu @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :sidebar-menu]])]
        [components/menu ::sidebar-menu
-                        {:menu-link header-menu}]))
+                        {:menu-link sidebar-menu}]))
 
 (defn sidebar
   []

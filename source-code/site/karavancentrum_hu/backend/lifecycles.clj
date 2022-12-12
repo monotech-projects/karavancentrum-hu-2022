@@ -1,5 +1,5 @@
 
-(ns site.karavancentrum-hu.pages.main-page.backend.lifecycles
+(ns site.karavancentrum-hu.backend.lifecycles
     (:require [x.core.api :as x.core]))
 
 ;; ----------------------------------------------------------------------------
@@ -17,4 +17,7 @@
                                                                 :client-event   [:main-page/load-page! :brands]}
                                            :main-page/contacts {:js-build       :site
                                                                 :route-template "/kapcsolat"
-                                                                :client-event   [:main-page/load-page! :contacts]}}]})
+                                                                :client-event   [:main-page/load-page! :contacts]}
+                                           :vehicle-page/route {:route-template "/berelheto-jarmuveink/:name"
+                                                                :js-build       :site
+                                                                :client-event   [:vehicle-page/load-page!]}}]})

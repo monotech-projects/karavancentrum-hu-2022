@@ -5,12 +5,12 @@
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
- 
-(r/reg-event-fx :vehicle-page/render!
+
+(r/reg-event-fx :vehicle-page/load-page!
+  {:dispatch-n [[:vehicle-page/render-page!]]})
+               ;[:ui/set-title! ...]
+               
+(r/reg-event-fx :vehicle-page/render-page!
   [:x.ui/render-surface! :vehicle-page/view
                          {:on-unmount [:vehicle-page/clear-selected-vehicle!]
                           :content    #'views/view}])
-
-(r/reg-event-fx :vehicle-page/load!
-  {:dispatch-n [[:vehicle-page/render!]]})
-               ;[:ui/set-title! ...]
