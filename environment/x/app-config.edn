@@ -6,9 +6,6 @@
 ;  :app-home (string)
 ;  :app-languages (keywords in vector)
 ;  :app-locale (keyword)
-;  :app-themes (maps in vector)
-;   [{:name (metamorphic-content)
-;     :id (keyword)}]
 ;  :app-title (string)
 ;  :author (string)
 ;  :css-paths (maps in vector)(opt)
@@ -39,23 +36,19 @@
 ; @usage
 ; {:app-home        "/"
 ;  :app-home        "/app"
-;  :app-themes      [{:id :my-theme :name "My theme"
-;                    {:id :light    :name :light-theme}
 ;  :debug-trigger   "avocado-juice"
 ;  :plugin-js-paths [{:uri "/js/plugins/external-plugin.js"
 ;                    {:uri "https://external-plugin.com/plugin.js"})
 
-{:app-themes
- [{:id :light :name :light-theme}
-  {:id :dark :name :dark-theme}]
- :app-languages [:en :hu]
+{:app-languages [:en :hu]
  :app-home "/app"
  :theme-color "#111111"
  :plugin-js-paths []
  :app-locale :hu
  :app-title "Karaváncentrum.hu"
  :author "Monotech.hu"
- :app-domain "https://karavancentrum.hu" 
+ :app-domain "https://karavancentrum.hu"
+ :debug-trigger "avocado-juice"
  :favicon-paths
  [{:uri "/favicon/blue/favicon-16.png" :size "16x16"}
   {:uri "/favicon/blue/favicon-32.png" :size "32x32"}

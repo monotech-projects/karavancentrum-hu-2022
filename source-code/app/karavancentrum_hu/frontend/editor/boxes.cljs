@@ -1,13 +1,14 @@
 
-(ns app.website-content.frontend.editor.boxes
-    (:require [app.common.frontend.api     :as common]
-              [app.components.frontend.api :as components]
-              [app.contents.frontend.api   :as contents]
-              [app.storage.frontend.api    :as storage]
-              [elements.api                :as elements]
-              [forms.api                   :as forms]
-              [re-frame.api                :as r]
-              [vector.api                  :as vector]))
+(ns app.karavancentrum-hu.frontend.editor.boxes
+    (:require [app.common.frontend.api        :as common]
+              [app.components.frontend.api    :as components]
+              [app.contents.frontend.api      :as contents]
+              [app.storage.frontend.api       :as storage]
+              [app.website-menus.frontend.api :as website-menus]
+              [elements.api                   :as elements]
+              [forms.api                      :as forms]
+              [re-frame.api                   :as r]
+              [vector.api                     :as vector]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -128,27 +129,79 @@
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
-(defn- webshop-link-field
+(defn- sidebar-menu-picker
   []
   (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
-       [elements/text-field ::webshop-link-field
-                            {:disabled?   editor-disabled?
-                             :indent      {:top :m :vertical :s}
-                             :label       :link
-                             :placeholder :webshop-link-placeholder
-                             :value-path  [:website-content :editor/edited-item :webshop-link]}]))
+       [website-menus/menu-picker ::sidebar-menu-picker
+                                  {:autosave?     true
+                                   :disabled?     editor-disabled?
+                                   :indent        {:vertical :s}
+                                   :multi-select? false
+                                   :placeholder   "n/a"
+                                   :value-path    [:website-content :editor/edited-item :sidebar-menu]}]))
 
-(defn- webshop-settings-box
+(defn- sidebar-menu-box
   []
   (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
-       [components/surface-box ::webshop-settings-box
+       [components/surface-box ::sidebar-menu-box
                                {:content [:<> [:div (forms/form-row-attributes)
-                                                    [:div (forms/form-block-attributes {:ratio 50})
-                                                          [webshop-link-field]]
-                                                    [:div (forms/form-block-attributes {:ratio 50})]]
+                                                    [:div (forms/form-block-attributes {:ratio 100})
+                                                          [sidebar-menu-picker]]]
                                               [elements/horizontal-separator {:height :s}]]
                                 :disabled? editor-disabled?
-                                :label     :webshop}]))
+                                :indent    {:top :m}
+                                :label     :sidebar-menu}]))
+
+;; ----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
+
+(defn- header-menu-picker
+  []
+  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
+       [website-menus/menu-picker ::header-menu-picker
+                                  {:autosave?     true
+                                   :disabled?     editor-disabled?
+                                   :indent        {:vertical :s}
+                                   :multi-select? false
+                                   :placeholder   "n/a"
+                                   :value-path    [:website-content :editor/edited-item :header-menu]}]))
+
+(defn- header-menu-box
+  []
+  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
+       [components/surface-box ::header-menu-box
+                               {:content [:<> [:div (forms/form-row-attributes)
+                                                    [:div (forms/form-block-attributes {:ratio 100})
+                                                          [header-menu-picker]]]
+                                              [elements/horizontal-separator {:height :s}]]
+                                :disabled? editor-disabled?
+                                :label     :header-menu}]))
+
+;; ----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
+
+(defn- footer-menu-picker
+  []
+  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
+       [website-menus/menu-picker ::footer-menu-picker
+                                  {:autosave?     true
+                                   :disabled?     editor-disabled?
+                                   :indent        {:vertical :s}
+                                   :multi-select? false
+                                   :placeholder   "n/a"
+                                   :value-path    [:website-content :editor/edited-item :footer-menu]}]))
+
+(defn- footer-menu-box
+  []
+  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
+       [components/surface-box ::footer-menu-box
+                               {:content [:<> [:div (forms/form-row-attributes)
+                                                    [:div (forms/form-block-attributes {:ratio 100})
+                                                          [footer-menu-picker]]]
+                                              [elements/horizontal-separator {:height :s}]]
+                                :disabled? editor-disabled?
+                                :indent    {:top :m}
+                                :label     :footer-menu}]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -256,29 +309,3 @@
                                               [elements/horizontal-separator {:height :xs}]]
                                 :disabled? editor-disabled?
                                 :label     :selling}]))
-
-;; ----------------------------------------------------------------------------
-;; ----------------------------------------------------------------------------
-
-(defn- rent-informations-picker
-  []
-  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
-       [contents/content-picker ::rent-informations-picker
-                                {:autosave?     true
-                                 :color         :muted
-                                 :disabled?     editor-disabled?
-                                 :indent        {:vertical :s}
-                                 :multi-select? false
-                                 :placeholder   "n/a"
-                                 :value-path    [:website-content :editor/edited-item :rent-informations]}]))
-
-(defn- rent-informations-box
-  []
-  (let [editor-disabled? @(r/subscribe [:file-editor/editor-disabled? :website-content.editor])]
-       [components/surface-box ::rent-informations-box
-                               {:content [:<> [:div (forms/form-row-attributes)
-                                                    [:div (forms/form-block-attributes {:ratio 100})
-                                                          [rent-informations-picker]]]
-                                              [elements/horizontal-separator {:height :s}]]
-                                :disabled? editor-disabled?
-                                :label     :rent-informations}]))

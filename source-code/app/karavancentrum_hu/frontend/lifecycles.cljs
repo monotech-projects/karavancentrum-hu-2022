@@ -1,7 +1,7 @@
 
-(ns app.rental-vehicles.frontend.lifecycles
-    (:require [app.rental-vehicles.frontend.dictionary :as dictionary]
-              [x.core.api                              :as x.core]))
+(ns app.karavancentrum-hu.frontend.lifecycles
+    (:require [app.karavancentrum-hu.frontend.dictionary :as dictionary]
+              [x.core.api                                :as x.core]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

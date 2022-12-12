@@ -1,7 +1,7 @@
 
-(ns app.website-content.frontend.editor.effects
-  (:require [app.website-content.frontend.editor.views :as editor.views]
-            [re-frame.api                              :as r]))
+(ns app.karavancentrum-hu.frontend.editor.effects
+  (:require [app.karavancentrum-hu.frontend.editor.views :as editor.views]
+            [re-frame.api                                :as r]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------

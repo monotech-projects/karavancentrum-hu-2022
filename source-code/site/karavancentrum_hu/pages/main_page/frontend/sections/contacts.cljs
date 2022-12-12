@@ -15,19 +15,19 @@
 
 (defn facebook-links
   []
-  (let [facebook-links @(r/subscribe [:x.db/get-item [:site :website-contacts :facebook-links]])]
+  (let [facebook-links @(r/subscribe [:x.db/get-item [:website-contacts :handler/downloaded-content :facebook-links]])]
        (letfn [(f [links link] (conj links [social-media-link link [:fab :fa-facebook] "Tovább a Facebook-ra"]))]
               (reduce f [:<>] facebook-links))))
 
 (defn instagram-links
   []
-  (let [instagram-links @(r/subscribe [:x.db/get-item [:site :website-contacts :instagram-links]])]
+  (let [instagram-links @(r/subscribe [:x.db/get-item [:website-contacts :handler/downloaded-content :instagram-links]])]
        (letfn [(f [links link] (conj links [social-media-link link [:fab :fa-instagram] "Tovább a Instagram-ra"]))]
               (reduce f [:<>] instagram-links))))
 
 (defn youtube-links
   []
-  (let [youtube-links @(r/subscribe [:x.db/get-item [:site :website-contacts :youtube-links]])]
+  (let [youtube-links @(r/subscribe [:x.db/get-item [:website-contacts :handler/downloaded-content :youtube-links]])]
        (letfn [(f [links link] (conj links [social-media-link link [:fab :fa-youtube] "Tovább a Youtube-ra"]))]
               (reduce f [:<>] youtube-links))))
 

@@ -1,5 +1,5 @@
 
-(ns app.website-content.frontend.dictionary)
+(ns app.karavancentrum-hu.frontend.dictionary)
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -25,4 +25,18 @@
             :hu "Bérléssel kapcsolatos információk"}
            :website-content
            {:en "Website content"
-            :hu "Webhely tartalma"}})
+            :hu "Webhely tartalma"}
+
+           ; TEMP
+           :header-menu
+           {:en "Header menu"
+            :hu "Fejléc menü"}
+           :footer-menu
+           {:en "Footer menu"
+            :hu "Lábléc menü"}
+           :sidebar-menu
+           {:en "Sidebar menu"
+            :hu "Oldalsáv menü"}
+           :menus
+           {:en "Menus"
+            :hu "Menük"}})

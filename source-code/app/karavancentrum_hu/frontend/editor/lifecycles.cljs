@@ -1,5 +1,5 @@
 
-(ns app.website-content.frontend.editor.lifecycles
+(ns app.karavancentrum-hu.frontend.editor.lifecycles
     (:require [x.core.api :as x.core]))
 
 ;; ----------------------------------------------------------------------------

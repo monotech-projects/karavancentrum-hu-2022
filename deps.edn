@@ -1,24 +1,24 @@
 
-{:paths ["resources" "source-code"]
+{:paths ["boot-loader" "resources" "source-code"]
  :deps  {monotech-hq/project-compiler  {:git/url "git@github.com:monotech-hq/project-compiler"
                                         :sha     "1e6cf3b3af236086af4c51f6da2c90143f57fc82"}
          monotech-hq/project-developer {:git/url "git@github.com:monotech-hq/project-developer.git"
                                         :sha     "33b99d9c0fed4ffb4947a55666a49bac83cb22e5"}
          monotech-hq/project-kit       {:git/url "git@github.com:monotech-hq/project-kit"
-                                        :sha     "c50de8f5425b06ce20f419c9ce74486e6e1e811e"}}
+                                        :sha     "2a48701fe9ef17e901f3f6730089268b804583c0"}}
 
  :aliases
- {:site.dev  {:exec-fn    boot-loader.sample.backend.main/dev
+ {:site.dev  {:exec-fn    sample.backend.main/dev
               :exec-args  {:port 3000 :shadow-build :site.dev}
               :jvm-opts   ["-Dclojure.server.repl={:port,5555,:accept,clojure.core.server/repl}"]
               :extra-deps {}}
 
-  :app.dev   {:exec-fn    boot-loader.sample.backend.main/dev
+  :app.dev   {:exec-fn    sample.backend.main/dev
               :exec-args  {:port 3000 :shadow-build :app.dev}
               :jvm-opts   ["-Dclojure.server.repl={:port,5555,:accept,clojure.core.server/repl}"]
               :extra-deps {}}
 
   :prod {:extra-deps {}
          :exec-fn   compiler.api/compile-app!
-         :exec-args {:java-config   {:aot true :jar-type :uber :main-class boot-loader.sample.backend.main}
+         :exec-args {:java-config   {:aot true :jar-type :uber :main-class sample.backend.main}
                      :shadow-builds [:site.prod :app.prod]}}}}

@@ -7,19 +7,31 @@
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
+(defn page-bottom
+  []
+  [:div {:style {:padding "100px 0 50px 0" :display "flex" :justify-content "center"}}
+        [:a {:class :kc-content-button :href "/"} "Vissza a főoldalra"]])
+
+(defn credits
+  []
+  [:div {:style {:padding "15px 0 15px 0" :color "#9ec3fb"}}
+        [components/created-by-link ::created-by-link {:theme :dark}]])
+
+(defn footer
+  []
+  (let [footer-menu @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :footer-menu]])]
+       [:div#kc-footer
+         [components/menu ::footer-menu {:menu-link footer-menu}]
+         [credits]]))
+
+;; ----------------------------------------------------------------------------
+;; ----------------------------------------------------------------------------
+
 (defn sidebar-menu
   []
-  (let [webshop-link @(r/subscribe [:x.db/get-item [:site :website-content :webshop-link]])
-        webshop-link  (uri/valid-uri webshop-link)]
-       [:div#kc-sidebar--menu-items
-         [:a.kc-sidebar--menu-item.mt-effect--underline {:href "/berbeadas"   :on-click #(r/dispatch [:site.components/hide-sidebar!])}
-                                                        "Bérbeadás"]
-         [:a.kc-sidebar--menu-item.mt-effect--underline {:href "/ertekesites" :on-click #(r/dispatch [:site.components/hide-sidebar!])}
-                                                        "Értékesítés"]
-         [:a.kc-sidebar--menu-item.mt-effect--underline {:href webshop-link   :on-click #(r/dispatch [:site.components/hide-sidebar!] :target "_blank")}
-                                                        "Webáruház"]
-         [:a.kc-sidebar--menu-item.mt-effect--underline {:href "/kapcsolat"   :on-click #(r/dispatch [:site.components/hide-sidebar!])}
-                                                        "Kapcsolat"]]))
+  (let [header-menu @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :header-menu]])]
+       [components/menu ::sidebar-menu
+                        {:menu-link header-menu}]))
 
 (defn sidebar
   []
@@ -27,22 +39,18 @@
 
 (defn company-name-and-slogan
   []
-  (let [company-name   @(r/subscribe [:x.db/get-item [:site :website-content :website-name]])
-        company-slogan @(r/subscribe [:x.db/get-item [:site :website-content :website-slogan]])]
+  (let [company-name   @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :website-name]])
+        company-slogan @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :website-slogan]])]
        [:a {:href "/" :style {:text-decoration "none"}}
            [:div#kc-navbar--company-name-and-slogan [:div#kc-navbar--company-name   company-name]
                                                     [:div#kc-navbar--company-slogan company-slogan]]]))
 
 (defn header
   []
-  (let [webshop-link @(r/subscribe [:x.db/get-item [:site :website-content :webshop-link]])
-        webshop-link  (uri/valid-uri webshop-link)]
+  (let [header-menu @(r/subscribe [:x.db/get-item [:website-content :handler/downloaded-content :header-menu]])]
        [components/navbar {:logo #'company-name-and-slogan
-                           :menu-items [{:href "/berbeadas"   :label "Bérbeadás"   :class :mt-effect--underline}
-                                        {:href "/ertekesites" :label "Értékesítés" :class :mt-effect--underline}
-                                        {:href webshop-link   :label "Webáruház"   :class :mt-effect--underline :target "_blank"}
-                                        {:href "/kapcsolat"   :label "Kapcsolat"   :class :mt-effect--underline}]
-                           :on-menu [:site.components/show-sidebar!]
+                           :menu-link header-menu
+                           :on-menu [:components.sidebar/show-sidebar!]
                            :threshold 800}]))
 
 ;; ----------------------------------------------------------------------------
@@ -50,9 +58,16 @@
 
 (defn wrapper
   [ui-structure]
-  [:div#kc [ui-structure]
-           [header]
-           [sidebar]])
+  (let [route-id @(r/subscribe [:x.router/get-current-route-id])]
+       [:div#kc [ui-structure]
+                [:div {:class :kc-page-spacer :style {:flex-grow 1}}]
+                (if @(r/subscribe [:website-pages.handler/on-page?])
+                     [page-bottom])
+                (if (= route-id :vehicle-page/route)
+                    [page-bottom])
+                [footer]
+                [header]
+                [sidebar]]))
 
 (defn view
   [ui-structure]

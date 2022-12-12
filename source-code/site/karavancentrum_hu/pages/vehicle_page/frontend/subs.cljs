@@ -7,13 +7,13 @@
 
 (defn get-vehicle [db [_]]
   (let [id       (get-in db [:selected-vehicle])
-        vehicles (get-in db [:site :rental-vehicles])]
+        vehicles (get-in db [:rental-vehicles :handler/downloaded-items])]
        (first (filter #(= id (:vehicle/id %)) vehicles))))
 
 (defn get-all-by-link
   [db [_]]
   (let [link-name (get-in db [:x.router :route-handler/meta-items :route-path-params :name])
-        vehicles  (get-in db [:site :rental-vehicles])]
+        vehicles  (get-in db [:rental-vehicles :handler/downloaded-items])]
        (filter #(= link-name (:vehicle/link-name %)) vehicles)))
 
 ;; ----------------------------------------------------------------------------

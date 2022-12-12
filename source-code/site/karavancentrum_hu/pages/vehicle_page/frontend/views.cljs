@@ -27,16 +27,14 @@
 (defn vehicle-content
   ; @param (namespaced map) vehicle-item
   [{{:content/keys [body]} :vehicle/description}]
-  [:div#kc-vehicle-page--content (contents/parse-content-body body)])
+  [:div#kc-vehicle-page--content (contents/parse-content body)])
 
 (defn vehicle-view
   ; @param (namespaced map) vehicle-item
   [vehicle-item]
   [:<> [slideshow       vehicle-item]
        [vehicle-name    vehicle-item]
-       [vehicle-content vehicle-item]
-       [:br]
-       [:a {:class :kc-content-button :href "/"} "Vissza a főoldalra"]])
+       [vehicle-content vehicle-item]])
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -66,9 +64,7 @@
        [:<> [:main {:id :kc-vehicle-page--wrapper}
                    (if (= 1 (count vehicles))
                        [vehicle-view (first vehicles)]
-                       [vehicles-view vehicles])]
-            [:div {:style {:padding "60px 0 15px 0"}}
-                  [components/created-by-link {:theme :light}]]]))
+                       [vehicles-view vehicles])]]))
 
 ;; --------------------------------------------------------------------------
 ;; --------------------------------------------------------------------------

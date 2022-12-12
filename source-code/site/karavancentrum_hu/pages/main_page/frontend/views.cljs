@@ -20,10 +20,6 @@
                             [brands/view]
                             [about-us/view]
                             [contacts/view]
-                            [components/impressum ::impressum {}]
-                            [:div {:style {:background "#2d2925"
-                                           :padding "15px 0 15px 0"}}
-                                  [components/created-by-link ::created-by-link {:theme :dark}]]
                             [image-preloader/component {:uri "/site/images/hero-1920.jpg"}]])
 
 ;; ----------------------------------------------------------------------------

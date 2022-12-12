@@ -1,9 +1,8 @@
 
 (ns site.karavancentrum-hu.pages.main-page.frontend.sections.about-us
-    (:require [app.contents.frontend.api :as contents]
-              [css.api                   :as css]
-              [re-frame.api              :as r]
-              [reagent.api               :refer [ratom]]))
+    (:require [css.api      :as css]
+              [re-frame.api :as r]
+              [reagent.api  :refer [ratom]]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
@@ -12,8 +11,7 @@
   []
   (let [page-visible? (ratom false)]
        (fn []
-           (if-let [about-us-page @(r/subscribe [:x.db/get-applied-item [:site :website-content :about-us-page :content/body]
-                                                                        contents/parse-content-body])]
+           (if-let [about-us-page @(r/subscribe [:contents.handler/get-parsed-content [:website-content :handler/downloaded-content :about-us-page]])]
                    [:<> [:div {:id :kc-about-us--section :style {:display (if-not @page-visible? "none" "block")}}
                               about-us-page]
                         [:div {:class :kc-content-button :on-click #(swap! page-visible? not)}
@@ -21,8 +19,7 @@
 
 (defn about-us-section
   []
-  (if-let [about-us-section @(r/subscribe [:x.db/get-applied-item [:site :website-content :about-us-section :content/body]
-                                                                  contents/parse-content-body])]
+  (if-let [about-us-section @(r/subscribe [:contents.handler/get-parsed-content [:website-content :handler/downloaded-content :about-us-section]])]
           [:div {:id :kc-about-us--section}
                 about-us-section]))
 

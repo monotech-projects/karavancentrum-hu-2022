@@ -7,6 +7,9 @@
 
 #kc {
   background-color: #f4f7f6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /***** Website *****/
@@ -55,11 +58,11 @@
   background-color: hsl(0deg 0% 100% / 80%);
 }
 
-#mt-navbar--menu-items {
+#mt-navbar .mt-menu--menu-items {
   gap: 50px;
 }
 
-.mt-navbar--menu-item {
+#mt-navbar .mt-menu--menu-item {
   color: #333;
   font-family: 'Poppins';
   font-size: 12px;
@@ -88,13 +91,13 @@
   justify-content: center;
 }
 
-#kc-sidebar--menu-items {
+#mt-sidebar .mt-menu--menu-items {
   display: flex;
   flex-direction: column;
   gap: 50px;
 }
 
-.kc-sidebar--menu-item {
+#mt-sidebar .mt-menu--menu-item {
   color: #333;
   font-family: 'Poppins';
   font-size: 12px;
@@ -105,11 +108,6 @@
   text-transform: uppercase;
 }
 
-#mt-sidebar .mt-effect--underline::before {
-  bottom: 0px;
-  --underline-color: #333;
-}
-
 /***** Sidebar *****/
 /******************************************************************************/
 
@@ -118,6 +116,7 @@
 /******************************************************************************/
 /***** Section *****/
 
+#mt-website-page--title,
 .kc-section-title {
   align-items: center;
   display: flex;
@@ -671,37 +670,6 @@
 
 
 /******************************************************************************/
-/***** Impressum *****/
-
-#mt-impressum {
-  background-color: #2d2925;
-  color: #a5a5a5;
-  display: flex;
-  font-size: var( --font-size-xs );
-  font-weight: 500;
-  justify-content: center;
-  padding: 25px 0 50px 0;
-}
-
-#mt-impressum--company-data {
-  display: flex;
-  flex-wrap: wrap;
-  grid-column-gap: 10px;
-  justify-content: center;
-  max-width: 720px;
-}
-
-#mt-impressum--company-name {
-  display: flex;
-  gap: 12px;
-}
-
-/***** Impressum *****/
-/******************************************************************************/
-
-
-
-/******************************************************************************/
 /***** Vehicle page, Rent-informations *****/
 
 #kc-rent-informations--wrapper,
@@ -752,4 +720,54 @@
 }
 
 /***** Vehicle page, Rent-informations *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Pages *****/
+
+#mt-website-page--wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#mt-website-page--body {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  font-size: var(--font-size-s);
+  padding: 24px;
+  width: 1024px;
+}
+
+/***** Pages *****/
+/******************************************************************************/
+
+
+
+/******************************************************************************/
+/***** Footer *****/
+
+#kc-footer {
+  background-color: #2d2925;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#kc-footer .mt-menu--menu-items {
+  color: #bbb;
+  font-family: 'Poppins';
+  font-size: 12px;
+  font-weight: 600;
+  gap: 30px;
+  justify-content: center;
+  letter-spacing: 1.5px;
+  padding: 25px 0 10px 0;
+  text-transform: uppercase;
+}
+
+/***** Footer *****/
 /******************************************************************************/
