@@ -2,6 +2,7 @@
 (ns site.karavancentrum-hu.pages.main-page.frontend.sections.contacts
     (:require [re-frame.api                 :as r]
               [site.components.frontend.api :as components]
+              [string.api                   :as string]
               [uri.api                      :as uri]))
 
 ;; ----------------------------------------------------------------------------
@@ -11,7 +12,9 @@
   [link icon-class label]
   [:a.kc-social-media-link {:href (uri/valid-uri link) :target "_blank" :title label}
                            [:i {:class icon-class}]
-                           [:span (str "https://www." link)]])
+                           [:span (-> link (string/not-starts-with! "https://")
+                                           (string/not-starts-with! "http://")
+                                           (string/not-starts-with! "www."))]])
 
 (defn facebook-links
   []

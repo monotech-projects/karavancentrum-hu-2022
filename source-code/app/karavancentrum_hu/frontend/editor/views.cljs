@@ -4,7 +4,7 @@
               [app.components.frontend.api                 :as components]
               [app.contents.frontend.api                   :as contents]
               [app.karavancentrum-hu.frontend.editor.boxes :as editor.boxes]
-              [app.sample.frontend.api                     :as website-content]
+              [app.website-content.frontend.api            :as website-content]
               [elements.api                                :as elements]
               [engines.file-editor.api                     :as file-editor]
               [layouts.surface-a.api                       :as surface-a]
