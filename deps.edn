@@ -19,6 +19,6 @@
               :extra-deps {}}
 
   :prod {:extra-deps {}
-         :exec-fn   compiler.api/compile-app!
+         :exec-fn   compiler.core/compile-app!
          :exec-args {:java-config   {:aot true :jar-type :uber :main-class sample.backend.main}
                      :shadow-builds [:site.prod :app.prod]}}}}
