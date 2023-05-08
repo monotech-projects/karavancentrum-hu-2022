@@ -1,13 +1,14 @@
 
 (ns site.karavancentrum-hu.components.vehicle-card
-    (:require [css.api :as css]))
+    (:require 
+      [css.api    :as css]))
 
 ;; ----------------------------------------------------------------------------
 ;; ----------------------------------------------------------------------------
 
 (defn- vehicle-card
-  [{:vehicle/keys [number-of-bunks number-of-seats name thumbnail]}]
-  [:div.kc-vehicle-card
+  [{:vehicle/keys [number-of-bunks visibility number-of-seats name thumbnail]}]
+  [:div.kc-vehicle-card {:data-private (= :private visibility)}
    [:div.kc-vehicle-card--thumbnail {:style {:background-image (-> thumbnail :media/uri css/url)}}]
    [:div.kc-vehicle-card--header [:p.kc-vehicle-card--name name]
                                  [:div.kc-vehicle-card--details
