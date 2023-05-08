@@ -128,7 +128,7 @@
   [components/surface-box {:content [:<> [:div (forms/form-row-attributes)
                                                [:div (forms/form-block-attributes {:ratio 100})
                                                      [brand-title-field      brand-dex brand-props]
-                                                     [brand-link-label-field brand-dex brand-props]
+                                                    ;;  [brand-link-label-field brand-dex brand-props]
                                                      [brand-link-field       brand-dex brand-props]]]
                                          [:div (forms/form-row-attributes)
                                                [:div (forms/form-block-attributes {:ratio 100})
